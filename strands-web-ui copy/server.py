@@ -24,7 +24,7 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)  # Enable CORS for all routes
 
 # Initialize MongoDB client
-mongo_client = MongoClient('mongodb+srv://infisical:t78fHgGGS1mIx483@quality-app.ss86w.mongodb.net/database?retryWrites=true&w=majority')
+mongo_client = MongoClient('MongoDBURI')
 db = mongo_client['digital_clean_core']
 agents_collection = db['ktern_agentic_layer']
 
