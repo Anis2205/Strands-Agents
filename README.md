@@ -6,7 +6,7 @@ A web-based interface for creating and managing Strands agents with custom tools
 
 ### Option 1: HTML Version (Simple)
 ```bash
-cd "strands-web-ui copy (2)\strands-web-ui copy"
+cd "strands-web-ui copy"
 python server.py
 ```
 Open: `http://localhost:5000`
@@ -15,13 +15,13 @@ Open: `http://localhost:5000`
 
 **Terminal 1 - Backend:**
 ```bash
-cd "strands-web-ui copy (2)\strands-web-ui copy"
+cd "strands-web-ui copy"
 python server.py
 ```
 
 **Terminal 2 - Frontend:**
 ```bash
-cd "strands-web-ui copy (2)\strands-react-ui"
+cd strands-react-ui
 npm install
 npm start
 ```
@@ -115,7 +115,7 @@ aws bedrock list-foundation-models --region us-east-1
 
 **Install Python dependencies:**
 ```bash
-pip install -r requirements.txt
+pip install -r "strands-web-ui copy/requirements.txt"
 ```
 
 **Install MCP server:**
