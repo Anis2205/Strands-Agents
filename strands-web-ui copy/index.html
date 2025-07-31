@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Creator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> AI Agent Creator</h1>
+            <p>Create custom AI agents with powerful tools</p>
+        </header>
+
+        <main>
+            <div class="welcome-section" id="welcome-section">
+                <h2>Welcome to AI Agent Creator</h2>
+                <p>Create intelligent AI agents with custom tools and capabilities.</p>
+                <button id="create-agent-btn" class="primary-btn">
+                    <i class="fas fa-plus-circle"></i> Create New Agent
+                </button>
+            </div>
+
+            <div class="form-section hidden" id="form-section">
+                <h2>Create Your Agent</h2>
+                <form id="agent-form">
+                    <div class="form-group">
+                        <label for="agent-name">Agent Name</label>
+                        <input type="text" id="agent-name" name="agent-name" placeholder="Enter agent name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="agent-description">Agent Description</label>
+                        <textarea id="agent-description" name="agent-description" placeholder="Describe what your agent does" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Tools</label>
+                        <div class="tools-container">
+                            <div class="standard-tools">
+                                <h3>Standard Tools</h3>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="http-request" name="tools" value="http_request">
+                                        <label for="http-request">HTTP Request</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="file-read" name="tools" value="file_read">
+                                        <label for="file-read">File Read</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="file-write" name="tools" value="file_write">
+                                        <label for="file-write">File Write</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="search" name="tools" value="search">
+                                        <label for="search">Search</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="browse" name="tools" value="browse">
+                                        <label for="browse">Browse</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="custom-tools">
+                                <h3>Custom Tools</h3>
+                                <div id="custom-tools-container">
+                                    <!-- Custom tools will be added here -->
+                                </div>
+                                <button type="button" id="add-custom-tool" class="secondary-btn">
+                                    <i class="fas fa-plus"></i> Add Custom Tool
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+                        <button type="submit" id="submit-btn" class="primary-btn">Create Agent</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="success-section hidden" id="success-section">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Agent Created Successfully!</h2>
+                <div class="agent-details">
+                    <p><strong>Name:</strong> <span id="success-agent-name"></span></p>
+                    <p><strong>Description:</strong> <span id="success-agent-description"></span></p>
+                    <p><strong>Tools:</strong> <span id="success-agent-tools"></span></p>
+                </div>
+                <button id="create-another-btn" class="primary-btn">Create Another Agent</button>
+            </div>
+        </main>
+
+        <div id="custom-tool-template" class="hidden">
+            <div class="custom-tool">
+                <div class="form-group">
+                    <label for="custom-tool-name-{id}">Tool Name</label>
+                    <input type="text" id="custom-tool-name-{id}" name="custom-tool-name" placeholder="Enter tool name" required>
+                </div>
+                <div class="form-group">
+                    <label for="custom-tool-description-{id}">Tool Description</label>
+                    <textarea id="custom-tool-description-{id}" name="custom-tool-description" placeholder="Describe what this tool does" required></textarea>
+                </div>
+                <button type="button" class="remove-tool-btn">
+                    <i class="fas fa-trash"></i> Remove
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 AI Agent Creator | Powered by Strands Framework</p>
+        </footer>
+    </div>
+
+    <div class="loading-overlay hidden" id="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Creating your agent...</p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
